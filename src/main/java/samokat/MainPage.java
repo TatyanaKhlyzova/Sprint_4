@@ -10,10 +10,6 @@ public class MainPage {
     private final WebDriver driver;
     //Кнопка согласия с куками "да все привыкли"
     private final By cookieButton = By.xpath(".//button[@id='rcc-confirm-button']");
-    //Верхняя кнопка "Заказать"
-    private final By upButtonOrder = By.className("Button_Button__ra12g");
-    //Нижняя кнопка "Заказать"
-    private final By downButtonOrder = By.xpath(".//button[contains(@class, 'Button_Middle__1CSJM')]");
 // Вопросы и ответы из раздела "Вопросы о важном"
     //Вопрос 1
     private final By question1 = By.id("accordion__heading-0");
@@ -151,15 +147,12 @@ public class MainPage {
         return driver.findElement(answer8).getText();
     }
 
-// Нажать на верхнюю кнопку "Заказать"
-    public void clickOnUpButtonOrder(){
-        driver.findElement(upButtonOrder).click();
-    }
-// Нажать на нижнюю кнопку "Заказать"
-    public void clickOnDownButtonOrder(){
-        WebElement element = driver.findElement(downButtonOrder);
+
+// Нажать на кнопку "Заказать" (и нижнюю, и верхнюю)
+    public void clickOnButtonOrder(By orderButtonMainPage){
+        WebElement element = driver.findElement(orderButtonMainPage);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
-        driver.findElement(downButtonOrder).click();
+        driver.findElement(orderButtonMainPage).click();
     }
 // Нажать на кнопку согласия с куками "да все привыкли"
     public void agreeWithCookie(){

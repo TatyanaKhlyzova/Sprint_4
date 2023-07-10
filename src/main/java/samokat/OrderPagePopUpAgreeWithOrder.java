@@ -3,14 +3,13 @@ package samokat;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-//Страница заказа 3 - поп-ап окно "Вы хотите оформить заказ?"
-public class OrderPage3 {
+public class OrderPagePopUpAgreeWithOrder {
     private final WebDriver driver;
     //Кнопка "Да"
     private final By yesButton = By.xpath(".//button[text()='Да']");
 
 
-    public OrderPage3(WebDriver driver) {
+    public OrderPagePopUpAgreeWithOrder(WebDriver driver) {
         this.driver = driver;
     }
     public void clickYesButton(){

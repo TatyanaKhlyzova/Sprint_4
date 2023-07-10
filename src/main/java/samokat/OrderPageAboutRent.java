@@ -3,13 +3,12 @@ package samokat;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-// Страница заказ 2 "Про аренду"
-public class OrderPage2 {
+public class OrderPageAboutRent {
     private final WebDriver driver;
     //Поле "Когда привезти самокат"
     private final By dateForScooterField = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
-    //Дата аренды 10 сентября 2023
-    private final By dateForScooter_10_09_2023 = By.xpath(".//div[@aria-label='Choose воскресенье, 10-е сентября 2023 г.']");
+    //Дата аренды - 10 число любого месяца и года
+    private final By dateForScooter = By.xpath(".//div[contains(text(),'10')]");
     //Поле "Срок аренды"
     private final By rentalPeriodField = By.xpath(".//div[@class='Dropdown-placeholder']");
     //Вариант "Четверо суток" из выпадающего списка
@@ -21,12 +20,12 @@ public class OrderPage2 {
     //Кнопка "Заказать" (внизу экрана)
     private final By orderButton = By.xpath(".//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
 
-    public OrderPage2(WebDriver driver) {
+    public OrderPageAboutRent(WebDriver driver) {
         this.driver = driver;
     }
     public void setDate(String date){
         driver.findElement(dateForScooterField).sendKeys(date);
-        driver.findElement(dateForScooter_10_09_2023).click();
+        driver.findElement(dateForScooter).click();
     }
     public void setRentalPeriod() {
         driver.findElement(rentalPeriodField).click();

@@ -21,7 +21,6 @@ public class MainPageTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
-
     @Test
     public void checkEachAnswer(){
         MainPage objMainPage = new MainPage(driver);

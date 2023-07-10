@@ -5,8 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-//Страница заказа 1 "Для кого самокат"
-public class OrderPage1 {
+public class OrderPageForWhomScooter {
     private final WebDriver driver;
     //Поле "Имя"
     private final By nameField = By.xpath(".//input[@placeholder='* Имя']");
@@ -24,7 +23,7 @@ public class OrderPage1 {
     private final By nextButton = By.xpath(".//button[text()='Далее']");
     //Кнопка согласия с куками "да все привыкли"
 
-    public OrderPage1(WebDriver driver) {
+    public OrderPageForWhomScooter(WebDriver driver) {
         this.driver = driver;
     }
     public void setName(String name){
